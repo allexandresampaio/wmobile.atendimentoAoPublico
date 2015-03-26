@@ -4,8 +4,10 @@ public class AtdVestFem extends Atendente {
 
 	@Override
 	public String resolverDuvida(TipoDuvida duvida) {
-		// TODO Auto-generated method stub
-		return null;
+		if (duvida == TipoDuvida.VESTFEM){
+			return this.getNome() + "resolve";
+		}
+		else return this.proximo.resolverDuvida(duvida);
 	}
 
 }

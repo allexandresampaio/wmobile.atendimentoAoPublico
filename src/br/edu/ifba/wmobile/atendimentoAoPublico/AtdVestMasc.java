@@ -4,8 +4,10 @@ public class AtdVestMasc extends Atendente {
 
 	@Override
 	public String resolverDuvida(TipoDuvida duvida) {
-		// TODO Auto-generated method stub
-		return null;
+		if (duvida == TipoDuvida.VESTMASC){
+			return this.getNome() + "resolve";
+		}
+		else return "Não há atendenes disponível para esta dúvida.";
 	}
 
 }
