@@ -23,6 +23,7 @@ public abstract class Atendente {
 		}
 	}
 	
+	
 	public abstract String resolverDuvida(TipoDuvida duvida);
 
 }
