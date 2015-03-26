@@ -6,6 +6,10 @@ public abstract class Atendente {
 	
 	private String nome;
 	
+	public Atendente(String nome){
+		this.nome = nome;
+	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -19,7 +23,7 @@ public abstract class Atendente {
 			this.proximo.setProximo(proximo);
 		}
 		else{
-			this.setProximo(proximo);
+			this.proximo = proximo;
 		}
 	}
 	
