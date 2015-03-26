@@ -2,9 +2,12 @@ package br.edu.ifba.wmobile.atendimentoAoPublico;
 
 public class AtdCalcados extends Atendente {
 
-	@Override
+	
 	public String resolverDuvida(TipoDuvida duvida) {
-		return null;
+		if (duvida == TipoDuvida.CALCADOS){
+			return this.getNome() + "resolve";
+		}
+		else return this.proximo.resolverDuvida(duvida);
 	}
 
 }
