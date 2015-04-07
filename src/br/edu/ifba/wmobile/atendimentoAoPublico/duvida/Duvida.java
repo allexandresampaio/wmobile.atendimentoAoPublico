@@ -12,7 +12,7 @@ import br.edu.ifba.wmobile.atendimentoAoPublico.padrao.cadeia.AtdVestFem;
 import br.edu.ifba.wmobile.atendimentoAoPublico.padrao.cadeia.AtdVestMasc;
 import br.edu.ifba.wmobile.atendimentoAoPublico.padrao.cadeia.TipoDuvida;
 
-@ManagedBean(name = "duv")
+@ManagedBean(name = "duvida")
 @SessionScoped
 public class Duvida {
 	
