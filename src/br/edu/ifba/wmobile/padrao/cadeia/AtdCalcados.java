@@ -10,7 +10,7 @@ public class AtdCalcados extends Atendente {
 
 	public String resolverDuvida(TipoDuvida duvida) {
 		if (duvida == TipoDuvida.CALCADOS){
-			return this.getNome() + " resolve";
+			return this.getNome();
 		}
 		else return this.proximo.resolverDuvida(duvida);
 	}

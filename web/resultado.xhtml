@@ -18,9 +18,16 @@
 
 		<pm:content>
 			<h:form id="frmDuvida">
-				<h:outputText id="resultadoCadeia" 
-					value="#{duvida.resultado}" />
-				<p:commandButton value="Voltar" action="inicio.bsi" />
+				<div align="center">
+					<p:graphicImage
+						value="/imagens/#{duvida.resultado}.jpg"
+						width="100" height="100" />
+					<p />
+					<h:outputText value="O(a) atendente #{duvida.resultado} está disponível!" />
+					<p />
+					<p:commandButton value="Confirmar Atendimento"	action="inicio.bsi" />
+					<p:commandButton value="Voltar" action="inicio.bsi" />
+				</div>
 			</h:form>
 		</pm:content>
 

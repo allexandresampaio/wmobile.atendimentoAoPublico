@@ -42,9 +42,9 @@ public class Duvida {
 	}
 
 	private String getAtendente(TipoDuvida tipoDuvida){
-		Atendente atd = new AtdCalcados("Sônia");
-		atd.setProximo(new AtdVestFem("Marisa"));
-		atd.setProximo(new AtdVestMasc("Gilson"));
+		Atendente atd = new AtdCalcados("Ferris");
+		atd.setProximo(new AtdVestFem("Sloane"));
+		atd.setProximo(new AtdVestMasc("Cameron"));
 		
 		return atd.resolverDuvida(tipoDuvida);
 	}
