@@ -6,13 +6,13 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import br.edu.ifba.wmobile.padrao.cadeia.Professor;
-import br.edu.ifba.wmobile.padrao.cadeia.ProfessorBD;
-import br.edu.ifba.wmobile.padrao.cadeia.ProfessorProgramacao;
-import br.edu.ifba.wmobile.padrao.cadeia.ProfessorRedes;
+import br.edu.ifba.wmobile.padrao.cadeia.Atendente;
+import br.edu.ifba.wmobile.padrao.cadeia.AtdCalcados;
+import br.edu.ifba.wmobile.padrao.cadeia.AtdVestFem;
+import br.edu.ifba.wmobile.padrao.cadeia.AtdVestMasc;
 import br.edu.ifba.wmobile.padrao.cadeia.TipoDuvida;
 
-@ManagedBean(name = "duv")
+@ManagedBean(name = "duvida")
 @SessionScoped
 public class Duvida {
 	
@@ -21,32 +21,32 @@ public class Duvida {
 	public List<String> getTiposDeDuvida(){
 		List<String> tipos = new ArrayList<String>();
 		
-		tipos.add("SQL");
-		tipos.add("Programação");
-		tipos.add("Cabeamento");
+		tipos.add("Calçados");
+		tipos.add("Vestuário Feminino");
+		tipos.add("Vestuário Masculino");
 		
 		return tipos;
 	}
 	
 	public void setTipoEscolhido(String tipo){
-		TipoDuvida tipoDuvida = TipoDuvida.SEM_DUVIDA;
-		if ("SQL".equals(tipo)){
-			tipoDuvida = TipoDuvida.SQL;
-		} else if ("Programação".equals(tipo)){
-			tipoDuvida = TipoDuvida.PROGRAMACAO;
-		} else if ("Cabeamento".equals(tipo)){
-			tipoDuvida = TipoDuvida.CABEAMENTO;
+		TipoDuvida tipoDuvida = TipoDuvida.SEMDUVIDA;
+		if ("Calçados".equals(tipo)){
+			tipoDuvida = TipoDuvida.CALCADOS;
+		} else if ("Vestuário Feminino".equals(tipo)){
+			tipoDuvida = TipoDuvida.VESTFEM;
+		} else if ("Vestuário Masculino".equals(tipo)){
+			tipoDuvida = TipoDuvida.VESTMASC;
 		}
 		
-		resultado = getProfessor(tipoDuvida);
+		resultado = getAtendente(tipoDuvida);
 	}
 
-	private String getProfessor(TipoDuvida tipoDuvida){
-		Professor prof = new ProfessorProgramacao();
-		prof.setProximo(new ProfessorBD());
-		prof.setProximo(new ProfessorRedes());
+	private String getAtendente(TipoDuvida tipoDuvida){
+		Atendente atd = new AtdCalcados("Sônia");
+		atd.setProximo(new AtdVestFem("Marisa"));
+		atd.setProximo(new AtdVestMasc("Gilson"));
 		
-		return prof.resolver(tipoDuvida);
+		return atd.resolverDuvida(tipoDuvida);
 	}
 	
 	public String getResultado(){
